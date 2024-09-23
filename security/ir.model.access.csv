@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_publications_postes,name_publications_postes,publication_module.model_publications_postes,base.group_user,1,1,1,1
+access_configuration_postes,name_configuration_postes,publication_module.model_configurations_postes,base.group_user,1,1,1,1
+access_bot_scraping,name_bot_scraping,publication_module.model_bot_scraping,base.group_user,1,1,1,1
+
+

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <record id="configuration_form" model="ir.ui.view">
+        <field name="name">configuration.form</field>
+        <field name="model">configurations.postes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="type_activité"/>
+                    </group>
+                    <group>
+                        <field name="mots_clés"/>
+                        <field name="source"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="configuration_tree" model="ir.ui.view">
+         <field name="name">configuration.tree</field>
+        <field name="model">configurations.postes</field>
+        <field name="arch" type="xml">
+            <tree string="Configuration">
+                <field name="nom"/>
+                <field name="type_activité"/>
+                <field name="mots_clés"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="configuration_action" model="ir.actions.act_window">
+        <field name="name">Configurations</field>
+        <field name="res_model">configurations.postes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+
+        <menuitem id="configurations" name="Configurations Postes" parent ="publications_postes_menu_root" action="configuration_action"/>
+    
+</odoo>

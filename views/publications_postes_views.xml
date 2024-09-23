@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <record id="publication_form" model="ir.ui.view">
+        <field name="name">publication.form</field>
+        <field name="model">publications.postes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="lien"/>
+                        <field name="publicateur"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                        <field name="date_publication"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="publication_tree" model="ir.ui.view">
+         <field name="name">publication.tree</field>
+        <field name="model">publications.postes</field>
+        <field name="arch" type="xml">
+            <tree string="Publication">
+                <field name="nom"/>
+                <field name="publicateur"/>
+                <field name="description"/>
+                <field name="date_publication"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="publication_action" model="ir.actions.act_window">
+        <field name="name">Publications</field>
+        <field name="res_model">publications.postes</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="publications_postes_menu_root" name="Publications Postes">
+        <menuitem id="publications" name="Publications Postes" action="publication_action"/>
+    </menuitem>
+</odoo>
